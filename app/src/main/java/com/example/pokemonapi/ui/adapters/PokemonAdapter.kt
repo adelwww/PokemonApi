@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pokemonapi.data.models.PokemonModel
 import com.example.pokemonapi.databinding.ItemPokemonBinding
-
 
 class PokemonAdapter : ListAdapter<PokemonModel, PokemonAdapter.PokemonViewHolder>(
     PokemonDiffCallBack
@@ -39,9 +39,8 @@ object PokemonDiffCallBack : DiffUtil.ItemCallback<PokemonModel>() {
     override fun areItemsTheSame(
         oldItem: PokemonModel,
         newItem: PokemonModel
-    )
-            : Boolean {
-        return oldItem.id == newItem.id
+    ): Boolean {
+        return oldItem.name == newItem.name
     }
 
     override fun areContentsTheSame(
