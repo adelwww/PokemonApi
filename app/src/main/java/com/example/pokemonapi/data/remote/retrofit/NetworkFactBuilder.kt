@@ -11,7 +11,7 @@ class RetrofitClient @Inject constructor() {
     fun provideRetrofit(
         okHttpClient: OkHttpClient.Builder
     ) = Retrofit.Builder()
-        .baseUrl("https://pokeapi.co/")
+        .baseUrl("https://pokeapi.co/api/v2/")
         .client(okHttpClient.build())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
